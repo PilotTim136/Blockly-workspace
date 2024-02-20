@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+#buttonContainer {
+  display: flex;
+  padding: 5px;
+  width: 100%;
+}
+
+#buttonContainer button {
+  margin-right: 5px;
+  border-radius: 7px;
+  border: 2px solid #858b8f;
+  padding: 4px;
+  font-size: 14px;
+  transition: background-color 0.4s ease, border-color 0.4s ease;
+}
+
+#buttonContainer button:hover{
+  background-color: #bdbdbd;
+  border: 2px solid #858b8f;
+}
+
+#blocklyContainer {
+  display: flex;
+  flex: 1;
+}
+
+#blocklyDiv {
+  flex: 1;
+  height: 100%;
+}
+
+#generatedCodeBlockly {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: scroll;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  padding: 10px;
+  white-space: pre;
+  margin: 0;
+  position: relative;
+  height: 94vh;
+  width: 60vh;
+}

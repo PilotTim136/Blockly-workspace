@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stupid Blocks</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="https://unpkg.com/blockly@10.3.1/blockly.min.js"></script>
+  <script src="https://unpkg.com/blockly@10.3.1/javascript_compressed.js"></script>
+</head>
+<body>
+  <div id="buttonContainer">
+    <button id="runCodeButton" onclick="runCode()">Run Generated Code</button>
+    <button id="fontSizePlusButton" onclick="fontSizeAdd(1)">+ Font Size</button>
+    <button id="fontSizeMinusButton" onclick="fontSizeAdd(-1)">- Font Size</button>
+    <button onclick="copy()">Copy</button>
+    <button onclick="saveToFile()">Save</button>
+    <button onclick="loadFromFile()">Load</button>
+  </div>
+
+  <div id="blocklyContainer">
+    <div id="blocklyDiv"></div>
+    <div id="generatedCodeContainer">
+      <p id="generatedCodeBlockly">...</p>
+    </div>
+  </div>
+
+  <xml id="toolbox" style="display: none">
+    <category name="Logic" colour="#5C81A6">
+      <block type="controls_if"></block>
+      <block type="logic_compare"></block>
+      <block type="logic_operation"></block>
+      <block type="logic_negate"></block>
+      <block type="logic_boolean"></block>
+      <block type="logic_null"></block>
+      <block type="logic_ternary"></block>
+    </category>
+
+    <category name="Loops" colour="#5CA65C">
+      <block type="controls_repeat_ext"></block>
+      <block type="controls_whileUntil"></block>
+      <block type="controls_for"></block>
+      <block type="controls_forEach"></block>
+      <block type="controls_flow_statements"></block>
+    </category>
+
+    <category name="Math" colour="#5C68A6">
+      <block type="math_number"></block>
+      <block type="math_arithmetic"></block>
+      <block type="math_single"></block>
+      <block type="math_trig"></block>
+      <block type="math_constant"></block>
+      <block type="math_number_property"></block>
+      <block type="math_round"></block>
+      <block type="math_on_list"></block>
+      <block type="math_modulo"></block>
+      <block type="math_constrain"></block>
+      <block type="math_random_int"></block>
+      <block type="math_random_float"></block>
+      <block type="math_atan2"></block>
+      <block type="custom_addone"></block>
+    </category>
+
+    <category name="Text" colour="#5C708B" shape="roundedRectangle">
+      <block type="text"></block>
+      <block type="text_length"></block>
+      <block type="text_count"></block>
+      <block type="text_isEmpty"></block>
+      <block type="text_join"></block>
+      <block type="text_indexOf"></block>
+      <block type="text_charAt"></block>
+      <block type="text_getSubstring"></block>
+      <block type="text_changeCase"></block>
+      <block type="text_trim"></block>
+      <block type="text_replace"></block>
+      <block type="text_reverse"></block>
+    </category>
+
+    <category name="Lists" colour="#745CA6">
+      <block type="lists_create_empty"></block>
+      <block type="lists_create_with"></block>
+      <block type="lists_repeat"></block>
+      <block type="lists_sort"></block>
+      <block type="lists_split"></block>
+      <block type="lists_length"></block>
+      <block type="lists_isEmpty"></block>
+      <block type="lists_indexOf"></block>
+      <block type="lists_getIndex"></block>
+      <block type="lists_setIndex"></block>
+    </category>
+
+     <category name="Colour" colour="#A6745C">
+      <block type="colour_picker"></block>
+      <block type="colour_random"></block>
+      <block type="colour_rgb"></block>
+      <block type="colour_blend"></block>
+    </category>
+
+    <category name="Variables" colour="#a55b80">
+      <block type="custom_variableget"></block>
+      <block type="custom_variableset"></block>
+      <block type="custom_variablechange"></block>
+    </category>
+
+    <category name="Window" colour="#69717d">
+      <block type="window_alert"></block>
+      <block type="window_confirm"></block>
+      <block type="window_prompt"></block>
+      <block type="window_console"></block>
+    </category>
+
+    <category name="Values" colour="#60a46c">
+      <block type="values_asnumber"></block>
+      <block type="values_asstring"></block>
+      <block type="values_asboolean"></block>
+      <block type="values_inline"></block>
+      <block type="values_inlinereturn"></block>
+      <block type="values_trycatch"></block>
+      <block type="values_error"></block>
+    </category>
+
+    <!-- <category name="category name" colour="hex/hue/color name"> -->
+      <!-- <block type="block-id here"></block> -->
+    <!-- </category> -->
+
+  </xml>
+
+  <script src="blocks/custom_addone.js"></script>
+  <script src="blocks/custom_variableget.js"></script>
+  <script src="blocks/custom_variableset.js"></script>
+  <script src="blocks/custom_variablechange.js"></script>
+  <script src="blocks/window_alert.js"></script>
+  <script src="blocks/window_confirm.js"></script>
+  <script src="blocks/window_prompt.js"></script>
+  <script src="blocks/window_console.js"></script>
+  <script src="blocks/values_asnumber.js"></script>
+  <script src="blocks/values_asstring.js"></script>
+  <script src="blocks/values_asboolean.js"></script>
+  <script src="blocks/values_inline.js"></script>
+  <script src="blocks/values_inlinereturn.js"></script>
+  <script src="blocks/values_trycatch.js"></script>
+  <script src="blocks/values_error.js"></script>
+  
+  <!-- <script scr="path to your block here></script>" -->
+
+  <script src="js/main.js"></script>
+</body>
+</html>
